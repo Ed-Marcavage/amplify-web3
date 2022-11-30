@@ -10,8 +10,14 @@ const networkConfig = {
 }
 
 const developmentChains = ["hardhat", "localhost"]
+const frontEndContractsFile =
+    "../amplify-web3-front-end/my-app/src/constants/contractAddresses.json"
+const frontEndAbiFile =
+    "../amplify-web3-front-end/my-app/src/constants/abi.json"
 
 module.exports = {
     networkConfig,
     developmentChains,
+    frontEndContractsFile,
+    frontEndAbiFile,
 }
