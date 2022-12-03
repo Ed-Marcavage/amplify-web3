@@ -15,30 +15,32 @@ module.exports = async () => {
 }
 
 async function updateAbi() {
-    const FundMe = await ethers.getContract("FundMe")
+    const BasicNft = await ethers.getContract("BasicNft")
     fs.writeFileSync(
         frontEndAbiFile,
-        FundMe.interface.format(ethers.utils.FormatTypes.json)
+        BasicNft.interface.format(ethers.utils.FormatTypes.json)
     )
 }
 
 async function updateContractAddresses() {
-    const FundMe = await ethers.getContract("FundMe")
+    const BasicNft = await ethers.getContract("BasicNft")
     const contractAddresses = JSON.parse(
         fs.readFileSync(frontEndContractsFile, "utf8")
     )
     if (network.config.chainId.toString() in contractAddresses) {
         if (
             !contractAddresses[network.config.chainId.toString()].includes(
-                FundMe.address
+                BasicNft.address
             )
         ) {
             contractAddresses[network.config.chainId.toString()].push(
-                FundMe.address
+                BasicNft.address
             )
         }
     } else {
-        contractAddresses[network.config.chainId.toString()] = [FundMe.address]
+        contractAddresses[network.config.chainId.toString()] = [
+            BasicNft.address,
+        ]
     }
     fs.writeFileSync(frontEndContractsFile, JSON.stringify(contractAddresses))
 }
