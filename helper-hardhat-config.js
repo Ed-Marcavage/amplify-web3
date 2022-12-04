@@ -11,9 +11,9 @@ const networkConfig = {
 
 const developmentChains = ["hardhat", "localhost"]
 const frontEndContractsFile =
-    "../amplify-web3-front-end/my-app/src/constants/contractAddresses.json"
+    "/Users/edmarcavage/Development/Development/Provenance-UI/src/Pages/Artist/NFT/constants/contractAddresses.json"
 const frontEndAbiFile =
-    "../amplify-web3-front-end/my-app/src/constants/abi.json"
+    "/Users/edmarcavage/Development/Development/Provenance-UI/src/Pages/Artist/NFT/constants/abi.json"
 
 module.exports = {
     networkConfig,
